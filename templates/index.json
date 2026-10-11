@@ -61,7 +61,7 @@
       "type": "featured-collection",
       "settings": {
         "heading": "Fresh from the kiln",
-        "collection": "",
+        "collection": "lamps",
         "limit": 8,
         "columns": "4"
       }
@@ -72,21 +72,21 @@
         "c1": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "lamps",
             "fallback_title": "Lamps"
           }
         },
         "c2": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "cake-stands",
             "fallback_title": "Cake Stands"
           }
         },
         "c3": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "wall-art",
             "fallback_title": "Wall Art"
           }
         }
@@ -115,7 +115,7 @@
       "type": "rich-text",
       "settings": {
         "heading": "Custom orders",
-        "text": "<p>Looking for a tableware set for your home, a restaurant, or a special gift? I'd be happy to create custom pieces for you.</p>",
+        "text": "<p>Dreaming of a lamp with your child's favourite story, a name, or a special character? I'd be happy to create a one-of-a-kind piece just for you.</p>",
         "button_label": "Get in touch",
         "button_link": ""
       }
