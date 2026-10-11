@@ -1,0 +1,15 @@
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "settings": {
+        "menu": "footer",
+        "about_heading": "הקסם של לבנה",
+        "about_text": "<p>כלים בעבודת יד מסטודיו קטן. כל פריט נזרק על האובניים, מזוגג ונשרף בנפרד, ולכן אין שניים זהים.</p>"
+      }
+    }
+  },
+  "order": ["footer"]
+}

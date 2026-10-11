@@ -1,0 +1,10 @@
+{%- comment -%} Business identity required by Israeli consumer protection law (remote sales). {%- endcomment -%}
+<address class="business-details">
+  {%- if settings.business_name != blank -%}<span>{{ settings.business_name }}</span>{%- endif -%}
+  {%- if settings.business_id != blank -%}
+    <span>{% if settings.business_type == 'licensed' %}{{ 'legal.licensed_dealer' | t }}{% else %}{{ 'legal.exempt_dealer' | t }}{% endif %} {{ settings.business_id }}</span>
+  {%- endif -%}
+  {%- if settings.business_address != blank -%}<span>{{ settings.business_address }}</span>{%- endif -%}
+  {%- if settings.business_phone != blank -%}<span><a href="tel:{{ settings.business_phone | remove: ' ' | remove: '-' }}">{{ settings.business_phone }}</a></span>{%- endif -%}
+  {%- if settings.business_email != blank -%}<span><a href="mailto:{{ settings.business_email }}">{{ settings.business_email }}</a></span>{%- endif -%}
+</address>

@@ -1,0 +1,57 @@
+<section class="section section--surface">
+  <div class="page-width">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="section__heading section__heading--center">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    <ul class="collection-grid">
+      {%- for block in section.blocks -%}
+        {%- assign c = block.settings.collection -%}
+        <li {{ block.shopify_attributes }}>
+          <a class="collection-card" href="{{ c.url | default: routes.collections_url }}">
+            <div class="collection-card__media">
+              {%- if block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', sizes: '(min-width: 990px) 33vw, 50vw', alt: c.title }}
+              {%- elsif c.featured_image -%}
+                {{ c.featured_image | image_url: width: 900 | image_tag: loading: 'lazy', sizes: '(min-width: 990px) 33vw, 50vw', alt: c.title }}
+              {%- else -%}
+                {{ 'collection-' | append: forloop.index | placeholder_svg_tag: 'placeholder' }}
+              {%- endif -%}
+            </div>
+            <h3 class="collection-card__title">{{ c.title | default: block.settings.fallback_title }}</h3>
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "קטגוריות",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "כותרת", "default": "לפי סוג כלי" }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "קטגוריה",
+      "settings": [
+        { "type": "collection", "id": "collection", "label": "קולקציה" },
+        { "type": "image_picker", "id": "image", "label": "תמונה (אופציונלי)" },
+        { "type": "text", "id": "fallback_title", "label": "כותרת זמנית", "default": "קטגוריה" }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "קטגוריות",
+      "blocks": [
+        { "type": "collection", "settings": { "fallback_title": "ספלים" } },
+        { "type": "collection", "settings": { "fallback_title": "קערות" } },
+        { "type": "collection", "settings": { "fallback_title": "אגרטלים" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

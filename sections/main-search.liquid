@@ -1,0 +1,37 @@
+<section class="section">
+  <div class="page-width">
+    <header class="page-header">
+      <h1 class="page-title">{{ 'general.search' | t }}</h1>
+      <form action="{{ routes.search_url }}" method="get" role="search" class="search-form">
+        <input type="hidden" name="type" value="product">
+        <label class="visually-hidden" for="SearchInput">{{ 'general.search' | t }}</label>
+        <input id="SearchInput" type="search" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'search.placeholder' | t }}">
+        <button type="submit" class="button">{{ 'general.search' | t }}</button>
+      </form>
+    </header>
+
+    {%- if search.performed -%}
+      {%- paginate search.results by 24 -%}
+        <p class="collection-toolbar__count">{{ 'search.results_count' | t: count: search.results_count, terms: search.terms }}</p>
+        <ul class="product-grid product-grid--4">
+          {%- for item in search.results -%}
+            {%- if item.object_type == 'product' -%}
+              <li>{% render 'product-card', product: item %}</li>
+            {%- else -%}
+              <li><a class="search-result" href="{{ item.url }}">{{ item.title }}</a></li>
+            {%- endif -%}
+          {%- else -%}
+            <li class="empty-state">{{ 'search.no_results' | t }}</li>
+          {%- endfor -%}
+        </ul>
+        {% render 'pagination', paginate: paginate %}
+      {%- endpaginate -%}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "חיפוש"
+}
+{% endschema %}

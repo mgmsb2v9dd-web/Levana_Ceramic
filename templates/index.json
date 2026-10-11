@@ -1,0 +1,45 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "eyebrow": "הקסם של לבנה",
+        "heading": "כלים שנוצרו בידיים, לשימוש יומיומי",
+        "text": "<p>קערות, ספלים, אגרטלים וצלחות בעבודת יד. כל פריט יחיד מסוגו.</p>",
+        "button_label": "לכל העבודות"
+      }
+    },
+    "features": {
+      "type": "features",
+      "blocks": {
+        "f1": { "type": "feature", "settings": { "icon": "hand", "title": "עבודת יד", "text": "כל כלי נוצר בנפרד, ואין שניים זהים" } },
+        "f2": { "type": "feature", "settings": { "icon": "kiln", "title": "בטוח לשימוש", "text": "זיגוגים בטוחים למזון, למדיח ולמיקרוגל" } },
+        "f3": { "type": "feature", "settings": { "icon": "truck", "title": "אריזה בטוחה", "text": "משלוח לכל הארץ באריזה מרופדת" } }
+      },
+      "block_order": ["f1", "f2", "f3"]
+    },
+    "featured": {
+      "type": "featured-collection",
+      "settings": { "heading": "עבודות חדשות מהתנור", "limit": 8, "columns": "4" }
+    },
+    "categories": {
+      "type": "collection-list",
+      "settings": { "heading": "לפי סוג כלי" },
+      "blocks": {
+        "c1": { "type": "collection", "settings": { "fallback_title": "ספלים" } },
+        "c2": { "type": "collection", "settings": { "fallback_title": "קערות" } },
+        "c3": { "type": "collection", "settings": { "fallback_title": "אגרטלים" } }
+      },
+      "block_order": ["c1", "c2", "c3"]
+    },
+    "about": {
+      "type": "image-with-text",
+      "settings": { "layout": "image-first" }
+    },
+    "custom": {
+      "type": "rich-text",
+      "settings": {}
+    }
+  },
+  "order": ["hero", "features", "featured", "categories", "about", "custom"]
+}

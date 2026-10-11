@@ -1,0 +1,37 @@
+<section class="hero hero--{{ section.settings.height }}">
+  <div class="hero__media">
+    {%- if section.settings.image != blank -%}
+      {{ section.settings.image | image_url: width: 2400 | image_tag: loading: 'eager', fetchpriority: 'high', sizes: '100vw', widths: '750, 1100, 1500, 2000, 2400', alt: section.settings.image.alt }}
+    {%- else -%}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder' }}
+    {%- endif -%}
+  </div>
+  <div class="hero__overlay" style="--overlay: {{ section.settings.overlay | divided_by: 100.0 }}"></div>
+  <div class="page-width hero__content">
+    {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+    {%- if section.settings.heading != blank -%}<h1 class="hero__heading">{{ section.settings.heading }}</h1>{%- endif -%}
+    {%- if section.settings.text != blank -%}<div class="hero__text">{{ section.settings.text }}</div>{%- endif -%}
+    {%- if section.settings.button_label != blank -%}
+      <a class="button button--light" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "באנר ראשי",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "תמונה" },
+    { "type": "range", "id": "overlay", "label": "הכהיית תמונה", "min": 0, "max": 80, "step": 5, "unit": "%", "default": 30 },
+    { "type": "select", "id": "height", "label": "גובה", "default": "large", "options": [
+      { "value": "small", "label": "נמוך" }, { "value": "medium", "label": "בינוני" }, { "value": "large", "label": "גבוה" }
+    ] },
+    { "type": "text", "id": "eyebrow", "label": "טקסט קטן מעל הכותרת", "default": "סטודיו לקרמיקה" },
+    { "type": "text", "id": "heading", "label": "כותרת", "default": "כלים שנוצרו בידיים, לשימוש יומיומי" },
+    { "type": "richtext", "id": "text", "label": "טקסט", "default": "<p>קערות, ספלים, אגרטלים וצלחות בעבודת יד. כל פריט יחיד מסוגו.</p>" },
+    { "type": "text", "id": "button_label", "label": "טקסט כפתור", "default": "לכל העבודות" },
+    { "type": "url", "id": "button_link", "label": "קישור כפתור" }
+  ],
+  "presets": [{ "name": "באנר ראשי" }]
+}
+{% endschema %}

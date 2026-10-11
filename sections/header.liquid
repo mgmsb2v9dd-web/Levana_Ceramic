@@ -1,0 +1,58 @@
+<header class="site-header">
+  <div class="page-width site-header__inner">
+    <button class="icon-button site-header__menu-toggle" type="button" aria-controls="SiteNav" aria-expanded="false" data-menu-toggle>
+      <span class="visually-hidden">{{ 'general.menu' | t }}</span>
+      {% render 'icon', name: 'menu' %}
+    </button>
+
+    <a href="{{ routes.root_url }}" class="site-header__logo">
+      {%- if section.settings.logo != blank -%}
+        {{ section.settings.logo | image_url: width: 400 | image_tag: alt: shop.name, width: section.settings.logo_width, height: null, loading: 'eager' }}
+      {%- else -%}
+        <span class="site-header__wordmark">{{ shop.name }}</span>
+      {%- endif -%}
+    </a>
+
+    <nav class="site-nav" id="SiteNav" aria-label="{{ 'general.menu' | t }}">
+      <ul class="site-nav__list">
+        {%- for link in section.settings.menu.links -%}
+          <li>
+            <a href="{{ link.url }}" {% if link.active %}aria-current="page"{% endif %}>{{ link.title }}</a>
+          </li>
+        {%- else -%}
+          <li><a href="{{ routes.all_products_collection_url }}">{{ 'general.shop' | t }}</a></li>
+          <li><a href="{{ routes.collections_url }}">{{ 'general.collections' | t }}</a></li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+
+    <div class="site-header__icons">
+      <a href="{{ routes.search_url }}" class="icon-button">
+        <span class="visually-hidden">{{ 'general.search' | t }}</span>
+        {% render 'icon', name: 'search' %}
+      </a>
+      {%- if shop.customer_accounts_enabled -%}
+        <a href="{{ routes.account_url }}" class="icon-button">
+          <span class="visually-hidden">{{ 'general.account' | t }}</span>
+          {% render 'icon', name: 'account' %}
+        </a>
+      {%- endif -%}
+      <a href="{{ routes.cart_url }}" class="icon-button cart-link">
+        <span class="visually-hidden">{{ 'general.cart' | t }}</span>
+        {% render 'icon', name: 'bag' %}
+        <span class="cart-count" data-cart-count {% if cart.item_count == 0 %}hidden{% endif %}>{{ cart.item_count }}</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "כותרת עליונה",
+  "settings": [
+    { "type": "image_picker", "id": "logo", "label": "לוגו" },
+    { "type": "range", "id": "logo_width", "label": "רוחב לוגו", "min": 60, "max": 300, "step": 10, "unit": "px", "default": 140 },
+    { "type": "link_list", "id": "menu", "label": "תפריט", "default": "main-menu" }
+  ]
+}
+{% endschema %}

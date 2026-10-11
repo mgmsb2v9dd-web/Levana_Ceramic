@@ -1,0 +1,13 @@
+{%- comment -%}
+  A single, unchecked, purpose-specific consent checkbox (Privacy Protection Law, Amendment 13).
+  Accepts: id, name, label, required (bool)
+{%- endcomment -%}
+<div class="consent">
+  <input type="checkbox" id="{{ id }}" name="{{ name }}" value="yes" {% if required %}required{% endif %}>
+  <label for="{{ id }}">
+    {{ label }}
+    {%- if shop.privacy_policy -%}
+      <a href="{{ shop.privacy_policy.url }}" target="_blank" rel="noopener">{{ 'legal.privacy_policy' | t }}</a>
+    {%- endif -%}
+  </label>
+</div>

@@ -1,0 +1,43 @@
+<section class="section section--tight">
+  <div class="page-width">
+    <ul class="features">
+      {%- for block in section.blocks -%}
+        <li class="feature" {{ block.shopify_attributes }}>
+          {% render 'icon', name: block.settings.icon %}
+          <h3 class="feature__title">{{ block.settings.title }}</h3>
+          <p class="feature__text">{{ block.settings.text }}</p>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "יתרונות",
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "יתרון",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "אייקון", "default": "hand", "options": [
+          { "value": "hand", "label": "יד" }, { "value": "kiln", "label": "להבה" }, { "value": "truck", "label": "משלוח" }
+        ] },
+        { "type": "text", "id": "title", "label": "כותרת", "default": "עבודת יד" },
+        { "type": "text", "id": "text", "label": "טקסט", "default": "כל כלי נוצר בנפרד על האובניים" }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "יתרונות",
+      "blocks": [
+        { "type": "feature", "settings": { "icon": "hand", "title": "עבודת יד", "text": "כל כלי נוצר בנפרד, ואין שניים זהים" } },
+        { "type": "feature", "settings": { "icon": "kiln", "title": "בטוח לשימוש", "text": "זיגוגים בטוחים למזון, למדיח ולמיקרוגל" } },
+        { "type": "feature", "settings": { "icon": "truck", "title": "אריזה בטוחה", "text": "משלוח לכל הארץ באריזה מרופדת" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

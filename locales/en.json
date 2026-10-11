@@ -1,0 +1,102 @@
+{
+  "accessibility": {
+    "skip_to_content": "Skip to content"
+  },
+  "general": {
+    "page": "Page {{ page }}",
+    "menu": "Menu",
+    "shop": "Shop",
+    "collections": "Collections",
+    "search": "Search",
+    "account": "Account",
+    "cart": "Cart",
+    "follow": "Follow",
+    "newsletter": "Be the first to hear about new pieces",
+    "email": "Email",
+    "subscribe": "Subscribe",
+    "subscribed": "Thanks for subscribing!",
+    "view_all": "View all",
+    "pagination": "Pagination",
+    "previous": "Previous",
+    "next": "Next",
+    "error": "Something went wrong, please try again."
+  },
+  "products": {
+    "product": {
+      "added_to_cart": "Added to cart ✓",
+      "sold_out": "Sold out",
+      "add_to_cart": "Add to cart",
+      "unavailable": "Unavailable",
+      "on_sale": "Sale",
+      "one_of_a_kind": "One of a kind",
+      "placeholder_title": "Piece name",
+      "price_from": "From {{ price }}",
+      "quantity": "Quantity",
+      "last_one": "Only one left",
+      "related": "You may also like",
+      "vat_included": "Price includes VAT",
+      "delivery_time": "Estimated delivery: {{ time }}",
+      "handmade_note": "Handmade – small variations from the photo are expected",
+      "cancellation": "Cancellations & returns"
+    }
+  },
+  "collections": {
+    "products_count": {
+      "one": "1 item",
+      "other": "{{ count }} items"
+    },
+    "sort_by": "Sort by",
+    "empty": "No pieces in this collection yet."
+  },
+  "cart": {
+    "title": "Your cart",
+    "remove": "Remove",
+    "note": "Order note",
+    "subtotal": "Subtotal",
+    "taxes_shipping": "Prices include VAT. Shipping calculated at checkout.",
+    "update": "Update cart",
+    "checkout": "Check out",
+    "empty": "Your cart is empty.",
+    "continue": "Continue shopping"
+  },
+  "contact": {
+    "success": "Thanks! Your message was received.",
+    "name": "Name",
+    "phone": "Phone",
+    "message": "Message",
+    "send": "Send"
+  },
+  "search": {
+    "placeholder": "Search mugs, bowls, vases...",
+    "results_count": {
+      "one": "1 result for \"{{ terms }}\"",
+      "other": "{{ count }} results for \"{{ terms }}\""
+    },
+    "no_results": "No results found."
+  },
+  "errors": {
+    "not_found_title": "Page not found",
+    "not_found_text": "The link may be broken or the page was removed."
+  },
+  "blog": {
+    "back": "Back to blog"
+  },
+  "password": {
+    "coming_soon": "Opening soon.",
+    "notify": "Leave your email and we'll let you know",
+    "owner_login": "Store owner login",
+    "password": "Password",
+    "enter": "Enter"
+  },
+  "legal": {
+    "licensed_dealer": "Licensed dealer no.",
+    "exempt_dealer": "Exempt dealer no.",
+    "privacy_policy": "(Privacy policy)"
+  },
+  "gift_card": {
+    "title": "Gift card",
+    "expired": "This gift card is expired or disabled",
+    "shop_link": "Shop now",
+    "print": "Print"
+  }
+}

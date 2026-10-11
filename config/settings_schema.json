@@ -1,0 +1,68 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Levana Ceramic – הקסם של לבנה",
+    "theme_version": "1.0.0",
+    "theme_author": "Levana Ceramic",
+    "theme_documentation_url": "https://github.com/mgmsb2v9dd-web/Levana_Ceramic",
+    "theme_support_url": "https://github.com/mgmsb2v9dd-web/Levana_Ceramic"
+  },
+  {
+    "name": "צבעים",
+    "settings": [
+      { "type": "color", "id": "color_background", "label": "רקע", "default": "#F7F2EC" },
+      { "type": "color", "id": "color_surface", "label": "רקע משני (כרטיסים)", "default": "#EFE6DB" },
+      { "type": "color", "id": "color_text", "label": "טקסט", "default": "#2E2621" },
+      { "type": "color", "id": "color_muted", "label": "טקסט משני", "default": "#7A6B5F" },
+      { "type": "color", "id": "color_accent", "label": "צבע הדגשה (כפתורים)", "default": "#A65D3F" },
+      { "type": "color", "id": "color_accent_contrast", "label": "טקסט על צבע הדגשה", "default": "#FFFFFF" },
+      { "type": "color", "id": "color_border", "label": "קווי הפרדה", "default": "#DDD0C2" }
+    ]
+  },
+  {
+    "name": "פריסה",
+    "settings": [
+      { "type": "range", "id": "page_width", "label": "רוחב עמוד מקסימלי", "min": 1000, "max": 1600, "step": 20, "unit": "px", "default": 1280 },
+      { "type": "range", "id": "corner_radius", "label": "עיגול פינות", "min": 0, "max": 24, "step": 2, "unit": "px", "default": 6 }
+    ]
+  },
+  {
+    "name": "לוגו ואייקון",
+    "settings": [
+      { "type": "image_picker", "id": "favicon", "label": "Favicon", "info": "32×32 פיקסלים" }
+    ]
+  },
+  {
+    "name": "פרטי עוסק (חוק הגנת הצרכן)",
+    "settings": [
+      { "type": "paragraph", "content": "חוק הגנת הצרכן (מכר מרחוק) מחייב להציג באתר את זהות העוסק. הפרטים יוצגו בתחתית כל עמוד." },
+      { "type": "text", "id": "business_name", "label": "שם העוסק", "default": "הקסם של לבנה" },
+      { "type": "text", "id": "business_id", "label": "מספר עוסק", "placeholder": "000000000" },
+      { "type": "select", "id": "business_type", "label": "סוג עוסק", "default": "exempt", "options": [
+        { "value": "exempt", "label": "עוסק פטור" }, { "value": "licensed", "label": "עוסק מורשה" }
+      ] },
+      { "type": "text", "id": "business_address", "label": "כתובת" },
+      { "type": "text", "id": "business_phone", "label": "טלפון" },
+      { "type": "text", "id": "business_email", "label": "אימייל" },
+      { "type": "text", "id": "delivery_time", "label": "זמן אספקה משוער", "default": "3–7 ימי עסקים" },
+      { "type": "richtext", "id": "cancellation_note", "label": "הערה על ביטול עסקה (מוצגת בעמוד מוצר)", "default": "<p>ניתן לבטל עסקה תוך 14 יום מקבלת המוצר בהתאם לחוק הגנת הצרכן. פריטים שנוצרו בהזמנה אישית עשויים להיות פטורים מזכות הביטול. פרטים מלאים במדיניות ההחזרות.</p>" }
+    ]
+  },
+  {
+    "name": "פרטיות (תיקון 13)",
+    "settings": [
+      { "type": "paragraph", "content": "תיבות ההסכמה מוצגות לא מסומנות, ונפרדות לכל מטרה. ודאו שמדיניות הפרטיות מוגדרת ב-Settings > Policies." },
+      { "type": "text", "id": "consent_marketing_label", "label": "נוסח הסכמה לדיוור", "default": "אני מסכים/ה לקבל עדכונים ומבצעים באימייל. אפשר להסיר את עצמי בכל עת." },
+      { "type": "text", "id": "consent_contact_label", "label": "נוסח הסכמה לטופס יצירת קשר", "default": "אני מסכים/ה שהפרטים ישמשו רק לצורך מענה לפנייה זו, בהתאם למדיניות הפרטיות." },
+      { "type": "page", "id": "privacy_request_page", "label": "עמוד בקשת עיון/מחיקת מידע", "info": "צרו עמוד עם התבנית page.privacy-request ובחרו אותו כאן" }
+    ]
+  },
+  {
+    "name": "רשתות חברתיות",
+    "settings": [
+      { "type": "text", "id": "social_instagram", "label": "Instagram", "placeholder": "https://instagram.com/..." },
+      { "type": "text", "id": "social_facebook", "label": "Facebook", "placeholder": "https://facebook.com/..." },
+      { "type": "text", "id": "social_whatsapp", "label": "WhatsApp (מספר בפורמט בינלאומי)", "placeholder": "9725XXXXXXXX" }
+    ]
+  }
+]

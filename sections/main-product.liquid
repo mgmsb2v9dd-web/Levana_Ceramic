@@ -1,0 +1,145 @@
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+<section class="section product" data-product-section>
+  <div class="page-width product__grid">
+    <div class="product__gallery" data-gallery>
+      <div class="product__main-media">
+        {%- if product.featured_media -%}
+          {%- assign main_media = current_variant.featured_media | default: product.featured_media -%}
+          {{ main_media | image_url: width: 1600 | image_tag: loading: 'eager', sizes: '(min-width: 990px) 55vw, 100vw', widths: '600, 900, 1200, 1600', data-main-image: '', alt: main_media.alt | default: product.title }}
+        {%- else -%}
+          {{ 'product-1' | placeholder_svg_tag: 'placeholder' }}
+        {%- endif -%}
+      </div>
+      {%- if product.media.size > 1 -%}
+        <ul class="product__thumbs">
+          {%- for media in product.media -%}
+            {%- if media.media_type == 'image' -%}
+              <li>
+                <button type="button" class="product__thumb{% if media.id == main_media.id %} is-active{% endif %}" data-thumb data-media-id="{{ media.id }}" data-src="{{ media | image_url: width: 1600 }}" aria-label="{{ media.alt | default: product.title | escape }}">
+                  {{ media | image_url: width: 200 | image_tag: loading: 'lazy', alt: '' }}
+                </button>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+
+    <div class="product__info">
+      {%- if product.type != blank -%}<p class="eyebrow">{{ product.type }}</p>{%- endif -%}
+      <h1 class="product__title">{{ product.title }}</h1>
+      <div data-price-wrapper>{% render 'price', product: product, variant: current_variant %}</div>
+      <p class="product__vat">{{ 'products.product.vat_included' | t }}</p>
+
+      {%- form 'product', product, class: 'product-form', data-product-form: '', novalidate: 'novalidate' -%}
+        <input type="hidden" name="id" value="{{ current_variant.id }}" data-variant-id>
+
+        {%- unless product.has_only_default_variant -%}
+          {%- for option in product.options_with_values -%}
+            <div class="field">
+              <label for="Option-{{ section.id }}-{{ forloop.index0 }}">{{ option.name }}</label>
+              <select id="Option-{{ section.id }}-{{ forloop.index0 }}" data-option-index="{{ forloop.index0 }}">
+                {%- for value in option.values -%}
+                  <option value="{{ value | escape }}" {% if option.selected_value == value %}selected{% endif %}>{{ value }}</option>
+                {%- endfor -%}
+              </select>
+            </div>
+          {%- endfor -%}
+        {%- endunless -%}
+
+        {%- if section.settings.show_quantity -%}
+          <div class="field">
+            <label for="Quantity-{{ section.id }}">{{ 'products.product.quantity' | t }}</label>
+            <div class="qty">
+              <button type="button" class="qty__btn" data-qty-change="-1" aria-label="-">{% render 'icon', name: 'minus' %}</button>
+              <input id="Quantity-{{ section.id }}" type="number" name="quantity" value="1" min="1" inputmode="numeric">
+              <button type="button" class="qty__btn" data-qty-change="1" aria-label="+">{% render 'icon', name: 'plus' %}</button>
+            </div>
+          </div>
+        {%- endif -%}
+
+        <button type="submit" name="add" class="button button--full" data-add-button {% unless current_variant.available %}disabled{% endunless %}>
+          {%- if current_variant.available -%}{{ 'products.product.add_to_cart' | t }}{%- else -%}{{ 'products.product.sold_out' | t }}{%- endif -%}
+        </button>
+        {%- if section.settings.show_dynamic_checkout -%}
+          {{ form | payment_button }}
+        {%- endif -%}
+        <p class="form-error" data-form-error hidden></p>
+      {%- endform -%}
+
+      {%- if current_variant.inventory_management == 'shopify' and current_variant.inventory_quantity == 1 and current_variant.available -%}
+        <p class="product__note">{{ 'products.product.last_one' | t }}</p>
+      {%- endif -%}
+
+      <div class="rte product__description">{{ product.description }}</div>
+
+      <ul class="product__facts">
+        {%- if settings.delivery_time != blank -%}
+          <li>{% render 'icon', name: 'truck' %}<span>{{ 'products.product.delivery_time' | t: time: settings.delivery_time }}</span></li>
+        {%- endif -%}
+        <li>{% render 'icon', name: 'hand' %}<span>{{ 'products.product.handmade_note' | t }}</span></li>
+      </ul>
+
+      {%- if settings.cancellation_note != blank -%}
+        <details class="accordion">
+          <summary>{{ 'products.product.cancellation' | t }}</summary>
+          <div class="rte">
+            {{ settings.cancellation_note }}
+            {%- if shop.refund_policy -%}<p><a href="{{ shop.refund_policy.url }}">{{ shop.refund_policy.title }}</a></p>{%- endif -%}
+          </div>
+        </details>
+      {%- endif -%}
+
+      {%- for block in section.blocks -%}
+        <details class="accordion" {{ block.shopify_attributes }}>
+          <summary>{{ block.settings.heading }}</summary>
+          <div class="rte">{{ block.settings.content }}{{ block.settings.page.content }}</div>
+        </details>
+      {%- endfor -%}
+    </div>
+  </div>
+
+  <script type="application/json" data-product-json>
+    {{ product | json }}
+  </script>
+</section>
+
+{%- if section.settings.show_related -%}
+  <section class="section section--surface">
+    <div class="page-width">
+      <h2 class="section__heading">{{ 'products.product.related' | t }}</h2>
+      {%- assign related_collection = product.collections.first -%}
+      <ul class="product-grid product-grid--4">
+        {%- assign shown = 0 -%}
+        {%- for item in related_collection.products -%}
+          {%- if item.id != product.id and shown < 4 -%}
+            <li>{% render 'product-card', product: item %}</li>
+            {%- assign shown = shown | plus: 1 -%}
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "עמוד מוצר",
+  "settings": [
+    { "type": "checkbox", "id": "show_quantity", "label": "הצג בחירת כמות", "default": false, "info": "בכלים יחידים מסוגם עדיף להשאיר כבוי" },
+    { "type": "checkbox", "id": "show_dynamic_checkout", "label": "הצג כפתור 'קנייה מהירה'", "default": true },
+    { "type": "checkbox", "id": "show_related", "label": "הצג מוצרים דומים", "default": true }
+  ],
+  "blocks": [
+    {
+      "type": "collapsible",
+      "name": "טקסט מתקפל",
+      "settings": [
+        { "type": "text", "id": "heading", "label": "כותרת", "default": "טיפול בכלי" },
+        { "type": "richtext", "id": "content", "label": "תוכן" },
+        { "type": "page", "id": "page", "label": "או תוכן מעמוד" }
+      ]
+    }
+  ]
+}
+{% endschema %}

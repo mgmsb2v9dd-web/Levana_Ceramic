@@ -1,0 +1,47 @@
+<section class="section">
+  <div class="page-width page-width--narrow">
+    {%- if section.settings.heading != blank -%}<h2 class="section__heading">{{ section.settings.heading }}</h2>{%- endif -%}
+    {%- if section.settings.intro != blank -%}<div class="rte">{{ section.settings.intro }}</div>{%- endif -%}
+    {%- form 'contact', class: 'contact-form' -%}
+      {%- if form.posted_successfully? -%}
+        <p class="form-success">{{ 'contact.success' | t }}</p>
+      {%- endif -%}
+      {{ form.errors | default_errors }}
+      <div class="contact-form__row">
+        <div class="field">
+          <label for="ContactName">{{ 'contact.name' | t }}</label>
+          <input id="ContactName" type="text" name="contact[name]" autocomplete="name" value="{{ form.name }}">
+        </div>
+        <div class="field">
+          <label for="ContactEmail">{{ 'general.email' | t }} *</label>
+          <input id="ContactEmail" type="email" name="contact[email]" autocomplete="email" required value="{{ form.email }}">
+        </div>
+      </div>
+      <div class="field">
+        <label for="ContactPhone">{{ 'contact.phone' | t }}</label>
+        <input id="ContactPhone" type="tel" name="contact[phone]" autocomplete="tel" value="{{ form.phone }}">
+      </div>
+      <div class="field">
+        <label for="ContactBody">{{ 'contact.message' | t }}</label>
+        <textarea id="ContactBody" name="contact[body]" rows="6">{{ form.body }}</textarea>
+      </div>
+      {%- if section.settings.subject != blank -%}
+        <input type="hidden" name="contact[subject]" value="{{ section.settings.subject | escape }}">
+      {%- endif -%}
+      {% render 'consent-checkbox', id: 'ContactConsent', name: 'contact[consent_contact]', label: settings.consent_contact_label, required: true %}
+      <button type="submit" class="button">{{ 'contact.send' | t }}</button>
+    {%- endform -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "טופס יצירת קשר",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "כותרת", "default": "כתבו לי" },
+    { "type": "richtext", "id": "intro", "label": "טקסט פתיחה" },
+    { "type": "text", "id": "subject", "label": "נושא הפנייה (נשלח במייל)", "default": "פנייה מהאתר" }
+  ],
+  "presets": [{ "name": "טופס יצירת קשר" }]
+}
+{% endschema %}

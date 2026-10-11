@@ -1,0 +1,84 @@
+<footer class="site-footer">
+  <div class="page-width site-footer__grid">
+    <div class="site-footer__about">
+      {%- if section.settings.about_heading != blank -%}
+        <h2 class="site-footer__heading">{{ section.settings.about_heading }}</h2>
+      {%- endif -%}
+      <div class="rte">{{ section.settings.about_text }}</div>
+    </div>
+
+    {%- if section.settings.menu.links.size > 0 -%}
+      <nav aria-label="{{ section.settings.menu.title }}">
+        <h2 class="site-footer__heading">{{ section.settings.menu.title }}</h2>
+        <ul class="site-footer__links">
+          {%- for link in section.settings.menu.links -%}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {%- endfor -%}
+        </ul>
+      </nav>
+    {%- endif -%}
+
+    <div>
+      <h2 class="site-footer__heading">{{ 'general.follow' | t }}</h2>
+      <ul class="social-links">
+        {%- if settings.social_instagram != blank -%}
+          <li><a href="{{ settings.social_instagram }}" target="_blank" rel="noopener">{% render 'icon', name: 'instagram' %}<span class="visually-hidden">Instagram</span></a></li>
+        {%- endif -%}
+        {%- if settings.social_facebook != blank -%}
+          <li><a href="{{ settings.social_facebook }}" target="_blank" rel="noopener">{% render 'icon', name: 'facebook' %}<span class="visually-hidden">Facebook</span></a></li>
+        {%- endif -%}
+        {%- if settings.social_whatsapp != blank -%}
+          <li><a href="https://wa.me/{{ settings.social_whatsapp }}" target="_blank" rel="noopener">{% render 'icon', name: 'whatsapp' %}<span class="visually-hidden">WhatsApp</span></a></li>
+        {%- endif -%}
+      </ul>
+      {%- if section.settings.show_newsletter -%}
+        {%- form 'customer', class: 'newsletter' -%}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <label for="NewsletterEmail" class="newsletter__label">{{ 'general.newsletter' | t }}</label>
+          <div class="newsletter__row">
+            <input id="NewsletterEmail" type="email" name="contact[email]" required autocomplete="email" placeholder="{{ 'general.email' | t }}">
+            <button type="submit" class="button">{{ 'general.subscribe' | t }}</button>
+          </div>
+          {% render 'consent-checkbox', id: 'NewsletterConsent', name: 'consent_marketing', label: settings.consent_marketing_label, required: true %}
+          {%- if form.posted_successfully? -%}<p class="form-success">{{ 'general.subscribed' | t }}</p>{%- endif -%}
+        {%- endform -%}
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="page-width site-footer__legal">
+    {% render 'business-details' %}
+    <ul class="policy-links">
+      {%- for policy in shop.policies -%}
+        <li><a href="{{ policy.url }}">{{ policy.title }}</a></li>
+      {%- endfor -%}
+      {%- if settings.privacy_request_page != blank -%}
+        <li><a href="{{ settings.privacy_request_page.url }}">{{ settings.privacy_request_page.title }}</a></li>
+      {%- endif -%}
+    </ul>
+  </div>
+
+  <div class="page-width site-footer__bottom">
+    <small>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}</small>
+    {%- if section.settings.show_payment_icons -%}
+      <ul class="payment-icons">
+        {%- for type in shop.enabled_payment_types -%}
+          <li>{{ type | payment_type_svg_tag }}</li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "תחתית",
+  "settings": [
+    { "type": "text", "id": "about_heading", "label": "כותרת" },
+    { "type": "richtext", "id": "about_text", "label": "טקסט" },
+    { "type": "link_list", "id": "menu", "label": "תפריט", "default": "footer" },
+    { "type": "checkbox", "id": "show_newsletter", "label": "הצג הרשמה לניוזלטר", "default": true },
+    { "type": "checkbox", "id": "show_payment_icons", "label": "הצג אמצעי תשלום", "default": true }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,42 @@
+{%- comment -%}
+  Renders a product card.
+  Accepts:
+  - product: product object (or blank for a placeholder)
+  - index: number used for placeholder art
+{%- endcomment -%}
+{%- if product != blank -%}
+  <a class="product-card" href="{{ product.url }}">
+    <div class="product-card__media">
+      {%- if product.featured_media -%}
+        {{ product.featured_media | image_url: width: 900 | image_tag: loading: 'lazy', sizes: '(min-width: 990px) 25vw, 50vw', widths: '360, 540, 720, 900', class: 'product-card__img', alt: product.featured_media.alt | default: product.title }}
+        {%- if product.media.size > 1 -%}
+          {{ product.media[1] | image_url: width: 900 | image_tag: loading: 'lazy', sizes: '(min-width: 990px) 25vw, 50vw', widths: '360, 540, 720, 900', class: 'product-card__img product-card__img--hover', alt: '' }}
+        {%- endif -%}
+      {%- else -%}
+        {{ 'product-1' | placeholder_svg_tag: 'placeholder' }}
+      {%- endif -%}
+      {%- if product.available == false -%}
+        <span class="badge badge--sold">{{ 'products.product.sold_out' | t }}</span>
+      {%- elsif product.compare_at_price > product.price -%}
+        <span class="badge">{{ 'products.product.on_sale' | t }}</span>
+      {%- elsif product.tags contains 'יחיד' or product.tags contains 'one-of-a-kind' -%}
+        <span class="badge badge--soft">{{ 'products.product.one_of_a_kind' | t }}</span>
+      {%- endif -%}
+    </div>
+    <div class="product-card__info">
+      <h3 class="product-card__title">{{ product.title }}</h3>
+      {% render 'price', product: product %}
+    </div>
+  </a>
+{%- else -%}
+  <div class="product-card product-card--placeholder">
+    <div class="product-card__media">
+      {%- assign art = index | modulo: 6 | plus: 1 -%}
+      {{ 'product-' | append: art | placeholder_svg_tag: 'placeholder' }}
+    </div>
+    <div class="product-card__info">
+      <h3 class="product-card__title">{{ 'products.product.placeholder_title' | t }}</h3>
+      <span class="price">₪0</span>
+    </div>
+  </div>
+{%- endif -%}

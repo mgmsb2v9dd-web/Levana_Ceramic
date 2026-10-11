@@ -1,0 +1,31 @@
+<section class="section">
+  <div class="page-width">
+    <header class="page-header">
+      <h1 class="page-title">{{ 'general.collections' | t }}</h1>
+    </header>
+    <ul class="collection-grid">
+      {%- for c in collections -%}
+        {%- unless c.handle == 'frontpage' -%}
+          <li>
+            <a class="collection-card" href="{{ c.url }}">
+              <div class="collection-card__media">
+                {%- if c.featured_image -%}
+                  {{ c.featured_image | image_url: width: 900 | image_tag: loading: 'lazy', sizes: '(min-width: 990px) 33vw, 50vw', alt: c.title }}
+                {%- else -%}
+                  {{ 'collection-1' | placeholder_svg_tag: 'placeholder' }}
+                {%- endif -%}
+              </div>
+              <h2 class="collection-card__title">{{ c.title }}</h2>
+            </a>
+          </li>
+        {%- endunless -%}
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "כל הקולקציות"
+}
+{% endschema %}

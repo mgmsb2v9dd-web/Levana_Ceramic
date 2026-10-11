@@ -1,0 +1,102 @@
+{
+  "accessibility": {
+    "skip_to_content": "דילוג לתוכן"
+  },
+  "general": {
+    "page": "עמוד {{ page }}",
+    "menu": "תפריט",
+    "shop": "חנות",
+    "collections": "קולקציות",
+    "search": "חיפוש",
+    "account": "החשבון שלי",
+    "cart": "סל קניות",
+    "follow": "עקבו אחריי",
+    "newsletter": "רוצים לשמוע ראשונים על עבודות חדשות?",
+    "email": "כתובת אימייל",
+    "subscribe": "הרשמה",
+    "subscribed": "תודה! נרשמת בהצלחה.",
+    "view_all": "לכל העבודות",
+    "pagination": "ניווט בין עמודים",
+    "previous": "הקודם",
+    "next": "הבא",
+    "error": "משהו השתבש, נסו שוב."
+  },
+  "products": {
+    "product": {
+      "added_to_cart": "נוסף לסל ✓",
+      "sold_out": "נמכר",
+      "add_to_cart": "הוספה לסל",
+      "unavailable": "לא זמין",
+      "on_sale": "במבצע",
+      "one_of_a_kind": "יחיד במינו",
+      "placeholder_title": "שם הכלי",
+      "price_from": "החל מ-{{ price }}",
+      "quantity": "כמות",
+      "last_one": "נשאר פריט אחרון",
+      "related": "אולי תאהבו גם",
+      "vat_included": "המחיר כולל מע״מ",
+      "delivery_time": "זמן אספקה משוער: {{ time }}",
+      "handmade_note": "עבודת יד – ייתכנו הבדלים קטנים מהתמונה",
+      "cancellation": "ביטול עסקה והחזרות"
+    }
+  },
+  "collections": {
+    "products_count": {
+      "one": "פריט אחד",
+      "other": "{{ count }} פריטים"
+    },
+    "sort_by": "מיון לפי",
+    "empty": "אין עדיין עבודות בקולקציה הזו."
+  },
+  "cart": {
+    "title": "סל הקניות",
+    "remove": "הסרה",
+    "note": "הערה להזמנה",
+    "subtotal": "סכום ביניים",
+    "taxes_shipping": "המחיר כולל מע״מ. משלוח יחושב בקופה.",
+    "update": "עדכון סל",
+    "checkout": "מעבר לתשלום",
+    "empty": "הסל ריק כרגע.",
+    "continue": "להמשך קנייה"
+  },
+  "contact": {
+    "success": "תודה! הפנייה התקבלה ואחזור אליך בהקדם.",
+    "name": "שם",
+    "phone": "טלפון",
+    "message": "הודעה",
+    "send": "שליחה"
+  },
+  "search": {
+    "placeholder": "מה מחפשים? ספל, קערה, אגרטל...",
+    "results_count": {
+      "one": "תוצאה אחת עבור \"{{ terms }}\"",
+      "other": "{{ count }} תוצאות עבור \"{{ terms }}\""
+    },
+    "no_results": "לא נמצאו תוצאות."
+  },
+  "errors": {
+    "not_found_title": "העמוד לא נמצא",
+    "not_found_text": "ייתכן שהקישור שגוי או שהעמוד הוסר."
+  },
+  "blog": {
+    "back": "חזרה לבלוג"
+  },
+  "password": {
+    "coming_soon": "החנות נפתחת בקרוב.",
+    "notify": "השאירו אימייל ונעדכן כשנפתח",
+    "owner_login": "כניסת בעלת החנות",
+    "password": "סיסמה",
+    "enter": "כניסה"
+  },
+  "legal": {
+    "licensed_dealer": "עוסק מורשה",
+    "exempt_dealer": "עוסק פטור",
+    "privacy_policy": "(מדיניות פרטיות)"
+  },
+  "gift_card": {
+    "title": "כרטיס מתנה",
+    "expired": "כרטיס המתנה פג תוקף או אינו פעיל",
+    "shop_link": "לחנות",
+    "print": "הדפסה"
+  }
+}

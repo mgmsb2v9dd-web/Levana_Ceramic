@@ -1,0 +1,22 @@
+<section class="section">
+  <div class="page-width page-width--narrow rich-text">
+    {%- if section.settings.heading != blank -%}<h2 class="section__heading">{{ section.settings.heading }}</h2>{%- endif -%}
+    <div class="rte">{{ section.settings.text }}</div>
+    {%- if section.settings.button_label != blank -%}
+      <a class="button" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "טקסט",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "כותרת", "default": "הזמנות אישיות" },
+    { "type": "richtext", "id": "text", "label": "טקסט", "default": "<p>מחפשים סט כלים לבית, למסעדה או מתנה מיוחדת? אשמח ליצור עבורכם פריטים בהזמנה אישית.</p>" },
+    { "type": "text", "id": "button_label", "label": "טקסט כפתור", "default": "צרו קשר" },
+    { "type": "url", "id": "button_link", "label": "קישור כפתור" }
+  ],
+  "presets": [{ "name": "טקסט" }]
+}
+{% endschema %}
