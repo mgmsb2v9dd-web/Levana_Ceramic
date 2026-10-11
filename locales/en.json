@@ -3,6 +3,7 @@
     "skip_to_content": "Skip to content"
   },
   "general": {
+    "direction": "ltr",
     "page": "Page {{ page }}",
     "menu": "Menu",
     "shop": "Shop",

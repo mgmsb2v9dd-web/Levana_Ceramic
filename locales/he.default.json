@@ -3,6 +3,7 @@
     "skip_to_content": "דילוג לתוכן"
   },
   "general": {
+    "direction": "rtl",
     "page": "עמוד {{ page }}",
     "menu": "תפריט",
     "shop": "חנות",
