@@ -22,6 +22,11 @@
     "next": "Next",
     "error": "Something went wrong, please try again."
   },
+  "sections": {
+    "hero": {
+      "fallback_alt": "Handmade ceramic light-box lamp showing Little Red Riding Hood and the wolf in a forest"
+    }
+  },
   "products": {
     "product": {
       "added_to_cart": "Added to cart ✓",

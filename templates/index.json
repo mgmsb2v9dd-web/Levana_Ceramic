@@ -3,6 +3,7 @@
     "hero": {
       "type": "hero",
       "settings": {
+        "layout": "split",
         "eyebrow": "Levana's Magic",
         "heading": "Handmade pieces for everyday use",
         "text": "<p>Handmade ceramic lamps, cake stands and wall art for kids' rooms and the living room.</p>",

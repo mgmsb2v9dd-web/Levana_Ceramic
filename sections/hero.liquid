@@ -1,3 +1,33 @@
+{%- comment -%}
+  Layouts:
+  - full:  image fills the banner, text over it (best for wide landscape photos)
+  - split: text beside the image (best for portrait product photos)
+  Without an uploaded image, the split layout falls back to a bundled product photo.
+{%- endcomment -%}
+{%- assign split = false -%}
+{%- if section.settings.layout == 'split' -%}{%- assign split = true -%}{%- endif -%}
+
+{%- if split -%}
+  <section class="hero-split">
+    <div class="page-width hero-split__inner">
+      <div class="hero-split__content">
+        {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+        {%- if section.settings.heading != blank -%}<h1 class="hero__heading">{{ section.settings.heading }}</h1>{%- endif -%}
+        {%- if section.settings.text != blank -%}<div class="hero__text">{{ section.settings.text }}</div>{%- endif -%}
+        {%- if section.settings.button_label != blank -%}
+          <a class="button" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a>
+        {%- endif -%}
+      </div>
+      <div class="hero-split__media">
+        {%- if section.settings.image != blank -%}
+          {{ section.settings.image | image_url: width: 1400 | image_tag: loading: 'eager', fetchpriority: 'high', sizes: '(min-width: 990px) 45vw, 100vw', widths: '600, 900, 1200, 1400', alt: section.settings.image.alt }}
+        {%- else -%}
+          <img src="{{ 'product-red-riding-hood-theater-lamp.jpg' | asset_url }}" alt="{{ 'sections.hero.fallback_alt' | t }}" width="747" height="1000" loading="eager" fetchpriority="high">
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+{%- else -%}
 <section class="hero hero--{{ section.settings.height }}">
   <div class="hero__media">
     {%- if section.settings.image != blank -%}
@@ -16,11 +46,15 @@
     {%- endif -%}
   </div>
 </section>
+{%- endif -%}
 
 {% schema %}
 {
   "name": "Hero banner",
   "settings": [
+    { "type": "select", "id": "layout", "label": "Layout", "default": "split", "options": [
+      { "value": "split", "label": "Text beside image (portrait photos)" }, { "value": "full", "label": "Full-width image (landscape photos)" }
+    ] },
     { "type": "image_picker", "id": "image", "label": "Image" },
     { "type": "range", "id": "overlay", "label": "Image overlay", "min": 0, "max": 80, "step": 5, "unit": "%", "default": 30 },
     { "type": "select", "id": "height", "label": "Height", "default": "large", "options": [
