@@ -6,15 +6,15 @@
         "care": {
           "type": "collapsible",
           "settings": {
-            "heading": "טיפול בכלי",
-            "content": "<p>מתאים למדיח ולמיקרוגל, אלא אם צוין אחרת. מומלץ להימנע ממעבר חד בין חום לקור. קרמיקה בעבודת יד עשויה להכיל שינויים קטנים בגוון ובצורה, וזה חלק מהקסם.</p>"
+            "heading": "Care instructions",
+            "content": "<p>Dishwasher and microwave safe unless stated otherwise. Avoid sudden changes between hot and cold. Handmade ceramics may vary slightly in colour and shape – that's part of the magic.</p>"
           }
         },
         "shipping": {
           "type": "collapsible",
           "settings": {
-            "heading": "משלוח ואריזה",
-            "content": "<p>כל כלי נארז בנפרד באריזה מרופדת. אם משהו הגיע שבור, צלמו ושלחו לי ואדאג לפתרון.</p>"
+            "heading": "Shipping & packaging",
+            "content": "<p>Every piece is packed individually in padded packaging. If something arrives broken, send me a photo and I'll make it right.</p>"
           }
         }
       },

@@ -24,15 +24,15 @@
 
 {% schema %}
 {
-  "name": "קולקציה נבחרת",
+  "name": "Featured collection",
   "settings": [
-    { "type": "text", "id": "heading", "label": "כותרת", "default": "עבודות חדשות מהתנור" },
-    { "type": "collection", "id": "collection", "label": "קולקציה" },
-    { "type": "range", "id": "limit", "label": "מספר מוצרים", "min": 2, "max": 12, "step": 1, "default": 8 },
-    { "type": "select", "id": "columns", "label": "עמודות במחשב", "default": "4", "options": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Fresh from the kiln" },
+    { "type": "collection", "id": "collection", "label": "Collection" },
+    { "type": "range", "id": "limit", "label": "Products to show", "min": 2, "max": 12, "step": 1, "default": 8 },
+    { "type": "select", "id": "columns", "label": "Desktop columns", "default": "4", "options": [
       { "value": "3", "label": "3" }, { "value": "4", "label": "4" }
     ] }
   ],
-  "presets": [{ "name": "קולקציה נבחרת" }]
+  "presets": [{ "name": "Featured collection" }]
 }
 {% endschema %}

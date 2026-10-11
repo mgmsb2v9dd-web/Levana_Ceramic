@@ -4,9 +4,9 @@
     "form": {
       "type": "contact-form",
       "settings": {
-        "heading": "בקשה לעיון, תיקון או מחיקת מידע אישי",
-        "intro": "<p>בהתאם לחוק הגנת הפרטיות, אפשר לבקש לעיין במידע ששמור עליכם, לתקן אותו או למחוק אותו. מלאו את הטופס עם כתובת האימייל שבה השתמשתם באתר, וכתבו מה תרצו לעשות. נחזור אליכם תוך 30 יום.</p>",
-        "subject": "בקשת פרטיות: עיון / תיקון / מחיקת מידע"
+        "heading": "Request to access, correct or delete personal data",
+        "intro": "<p>Under the Israeli Privacy Protection Law you may ask to see the personal data we hold about you, correct it, or delete it. Fill in the form using the email address you used on this site and tell us what you'd like us to do. We'll respond within 30 days.</p>",
+        "subject": "Privacy request: access / correct / delete data"
       }
     }
   },

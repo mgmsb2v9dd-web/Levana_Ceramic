@@ -1,68 +1,68 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Levana Ceramic – הקסם של לבנה",
+    "theme_name": "Levana Ceramic",
     "theme_version": "1.0.0",
     "theme_author": "Levana Ceramic",
     "theme_documentation_url": "https://github.com/mgmsb2v9dd-web/Levana_Ceramic",
     "theme_support_url": "https://github.com/mgmsb2v9dd-web/Levana_Ceramic"
   },
   {
-    "name": "צבעים",
+    "name": "Colors",
     "settings": [
-      { "type": "color", "id": "color_background", "label": "רקע", "default": "#F7F2EC" },
-      { "type": "color", "id": "color_surface", "label": "רקע משני (כרטיסים)", "default": "#EFE6DB" },
-      { "type": "color", "id": "color_text", "label": "טקסט", "default": "#2E2621" },
-      { "type": "color", "id": "color_muted", "label": "טקסט משני", "default": "#7A6B5F" },
-      { "type": "color", "id": "color_accent", "label": "צבע הדגשה (כפתורים)", "default": "#A65D3F" },
-      { "type": "color", "id": "color_accent_contrast", "label": "טקסט על צבע הדגשה", "default": "#FFFFFF" },
-      { "type": "color", "id": "color_border", "label": "קווי הפרדה", "default": "#DDD0C2" }
+      { "type": "color", "id": "color_background", "label": "Background", "default": "#F7F2EC" },
+      { "type": "color", "id": "color_surface", "label": "Secondary background (cards)", "default": "#EFE6DB" },
+      { "type": "color", "id": "color_text", "label": "Text", "default": "#2E2621" },
+      { "type": "color", "id": "color_muted", "label": "Secondary text", "default": "#7A6B5F" },
+      { "type": "color", "id": "color_accent", "label": "Accent (buttons)", "default": "#A65D3F" },
+      { "type": "color", "id": "color_accent_contrast", "label": "Text on accent", "default": "#FFFFFF" },
+      { "type": "color", "id": "color_border", "label": "Borders", "default": "#DDD0C2" }
     ]
   },
   {
-    "name": "פריסה",
+    "name": "Layout",
     "settings": [
-      { "type": "range", "id": "page_width", "label": "רוחב עמוד מקסימלי", "min": 1000, "max": 1600, "step": 20, "unit": "px", "default": 1280 },
-      { "type": "range", "id": "corner_radius", "label": "עיגול פינות", "min": 0, "max": 24, "step": 2, "unit": "px", "default": 6 }
+      { "type": "range", "id": "page_width", "label": "Max page width", "min": 1000, "max": 1600, "step": 20, "unit": "px", "default": 1280 },
+      { "type": "range", "id": "corner_radius", "label": "Corner radius", "min": 0, "max": 24, "step": 2, "unit": "px", "default": 6 }
     ]
   },
   {
-    "name": "לוגו ואייקון",
+    "name": "Favicon",
     "settings": [
-      { "type": "image_picker", "id": "favicon", "label": "Favicon", "info": "32×32 פיקסלים" }
+      { "type": "image_picker", "id": "favicon", "label": "Favicon", "info": "32 × 32 px" }
     ]
   },
   {
-    "name": "פרטי עוסק (חוק הגנת הצרכן)",
+    "name": "Business details",
     "settings": [
-      { "type": "paragraph", "content": "חוק הגנת הצרכן (מכר מרחוק) מחייב להציג באתר את זהות העוסק. הפרטים יוצגו בתחתית כל עמוד." },
-      { "type": "text", "id": "business_name", "label": "שם העוסק", "default": "הקסם של לבנה" },
-      { "type": "text", "id": "business_id", "label": "מספר עוסק", "placeholder": "000000000" },
-      { "type": "select", "id": "business_type", "label": "סוג עוסק", "default": "exempt", "options": [
-        { "value": "exempt", "label": "עוסק פטור" }, { "value": "licensed", "label": "עוסק מורשה" }
+      { "type": "paragraph", "content": "Israeli consumer protection law (remote sales) requires the seller's identity to be shown on the site. These details appear in the footer of every page." },
+      { "type": "text", "id": "business_name", "label": "Business name", "default": "Levana's Magic" },
+      { "type": "text", "id": "business_id", "label": "Business registration number", "placeholder": "000000000" },
+      { "type": "select", "id": "business_type", "label": "Business type", "default": "exempt", "options": [
+        { "value": "exempt", "label": "Exempt dealer (Osek Patur)" }, { "value": "licensed", "label": "Licensed dealer (Osek Murshe)" }
       ] },
-      { "type": "text", "id": "business_address", "label": "כתובת" },
-      { "type": "text", "id": "business_phone", "label": "טלפון" },
-      { "type": "text", "id": "business_email", "label": "אימייל" },
-      { "type": "text", "id": "delivery_time", "label": "זמן אספקה משוער", "default": "3–7 ימי עסקים" },
-      { "type": "richtext", "id": "cancellation_note", "label": "הערה על ביטול עסקה (מוצגת בעמוד מוצר)", "default": "<p>ניתן לבטל עסקה תוך 14 יום מקבלת המוצר בהתאם לחוק הגנת הצרכן. פריטים שנוצרו בהזמנה אישית עשויים להיות פטורים מזכות הביטול. פרטים מלאים במדיניות ההחזרות.</p>" }
+      { "type": "text", "id": "business_address", "label": "Address" },
+      { "type": "text", "id": "business_phone", "label": "Phone" },
+      { "type": "text", "id": "business_email", "label": "Email" },
+      { "type": "text", "id": "delivery_time", "label": "Estimated delivery time", "default": "3–7 business days" },
+      { "type": "richtext", "id": "cancellation_note", "label": "Cancellation note (shown on product pages)", "default": "<p>You may cancel your purchase within 14 days of receiving the item, in accordance with Israeli consumer protection law. Custom-made pieces may be exempt from the right to cancel. See the refund policy for full details.</p>" }
     ]
   },
   {
-    "name": "פרטיות (תיקון 13)",
+    "name": "Privacy",
     "settings": [
-      { "type": "paragraph", "content": "תיבות ההסכמה מוצגות לא מסומנות, ונפרדות לכל מטרה. ודאו שמדיניות הפרטיות מוגדרת ב-Settings > Policies." },
-      { "type": "text", "id": "consent_marketing_label", "label": "נוסח הסכמה לדיוור", "default": "אני מסכים/ה לקבל עדכונים ומבצעים באימייל. אפשר להסיר את עצמי בכל עת." },
-      { "type": "text", "id": "consent_contact_label", "label": "נוסח הסכמה לטופס יצירת קשר", "default": "אני מסכים/ה שהפרטים ישמשו רק לצורך מענה לפנייה זו, בהתאם למדיניות הפרטיות." },
-      { "type": "page", "id": "privacy_request_page", "label": "עמוד בקשת עיון/מחיקת מידע", "info": "צרו עמוד עם התבנית page.privacy-request ובחרו אותו כאן" }
+      { "type": "paragraph", "content": "Consent checkboxes are shown unchecked and separately for each purpose (Privacy Protection Law, Amendment 13). Make sure a privacy policy is set in Settings > Policies." },
+      { "type": "text", "id": "consent_marketing_label", "label": "Newsletter consent text", "default": "I agree to receive updates and offers by email. I can unsubscribe at any time." },
+      { "type": "text", "id": "consent_contact_label", "label": "Contact form consent text", "default": "I agree that my details will be used only to reply to this enquiry, in line with the privacy policy." },
+      { "type": "page", "id": "privacy_request_page", "label": "Data access / deletion request page", "info": "Create a page using the page.privacy-request template and select it here" }
     ]
   },
   {
-    "name": "רשתות חברתיות",
+    "name": "Social media",
     "settings": [
       { "type": "text", "id": "social_instagram", "label": "Instagram", "placeholder": "https://instagram.com/..." },
       { "type": "text", "id": "social_facebook", "label": "Facebook", "placeholder": "https://facebook.com/..." },
-      { "type": "text", "id": "social_whatsapp", "label": "WhatsApp (מספר בפורמט בינלאומי)", "placeholder": "9725XXXXXXXX" }
+      { "type": "text", "id": "social_whatsapp", "label": "WhatsApp (international format)", "placeholder": "9725XXXXXXXX" }
     ]
   }
 ]

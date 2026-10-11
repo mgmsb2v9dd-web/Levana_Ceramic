@@ -124,20 +124,20 @@
 
 {% schema %}
 {
-  "name": "עמוד מוצר",
+  "name": "Product page",
   "settings": [
-    { "type": "checkbox", "id": "show_quantity", "label": "הצג בחירת כמות", "default": false, "info": "בכלים יחידים מסוגם עדיף להשאיר כבוי" },
-    { "type": "checkbox", "id": "show_dynamic_checkout", "label": "הצג כפתור 'קנייה מהירה'", "default": true },
-    { "type": "checkbox", "id": "show_related", "label": "הצג מוצרים דומים", "default": true }
+    { "type": "checkbox", "id": "show_quantity", "label": "Show quantity selector", "default": false, "info": "Best left off for one-of-a-kind pieces" },
+    { "type": "checkbox", "id": "show_dynamic_checkout", "label": "Show dynamic checkout button", "default": true },
+    { "type": "checkbox", "id": "show_related", "label": "Show related products", "default": true }
   ],
   "blocks": [
     {
       "type": "collapsible",
-      "name": "טקסט מתקפל",
+      "name": "Collapsible text",
       "settings": [
-        { "type": "text", "id": "heading", "label": "כותרת", "default": "טיפול בכלי" },
-        { "type": "richtext", "id": "content", "label": "תוכן" },
-        { "type": "page", "id": "page", "label": "או תוכן מעמוד" }
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Care instructions" },
+        { "type": "richtext", "id": "content", "label": "Content" },
+        { "type": "page", "id": "page", "label": "Or content from page" }
       ]
     }
   ]

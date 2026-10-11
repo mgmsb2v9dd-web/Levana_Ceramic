@@ -20,18 +20,18 @@
 
 {% schema %}
 {
-  "name": "תמונה וטקסט",
+  "name": "Image with text",
   "settings": [
-    { "type": "image_picker", "id": "image", "label": "תמונה" },
-    { "type": "select", "id": "layout", "label": "מיקום תמונה", "default": "image-first", "options": [
-      { "value": "image-first", "label": "תמונה בהתחלה" }, { "value": "image-last", "label": "תמונה בסוף" }
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "select", "id": "layout", "label": "Image position", "default": "image-first", "options": [
+      { "value": "image-first", "label": "Image first" }, { "value": "image-last", "label": "Image last" }
     ] },
-    { "type": "text", "id": "eyebrow", "label": "טקסט קטן", "default": "על הסטודיו" },
-    { "type": "text", "id": "heading", "label": "כותרת", "default": "נעים להכיר, אני לבנה" },
-    { "type": "richtext", "id": "text", "label": "טקסט", "default": "<p>אני יוצרת כלים מחומר כבר שנים, בסטודיו קטן ליד הבית. כל כלי מתחיל כגוש חימר על האובניים, עובר ייבוש, שריפה ראשונה, זיגוג ידני ושריפה שנייה.</p><p>אני אוהבת צורות פשוטות, זיגוגים טבעיים והטביעות הקטנות שהידיים משאירות.</p>" },
-    { "type": "text", "id": "button_label", "label": "טקסט כפתור", "default": "לסיפור המלא" },
-    { "type": "url", "id": "button_link", "label": "קישור כפתור" }
+    { "type": "text", "id": "eyebrow", "label": "Small text", "default": "About the studio" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Hi, I'm Levana" },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>I've been making pottery for years in a small studio near my home. Every piece starts as a lump of clay on the wheel, then goes through drying, a first firing, hand glazing and a second firing.</p><p>I love simple shapes, natural glazes and the small marks that hands leave behind.</p>" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Read the full story" },
+    { "type": "url", "id": "button_link", "label": "Button link" }
   ],
-  "presets": [{ "name": "תמונה וטקסט" }]
+  "presets": [{ "name": "Image with text" }]
 }
 {% endschema %}

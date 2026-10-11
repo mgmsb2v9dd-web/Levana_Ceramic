@@ -14,28 +14,28 @@
 
 {% schema %}
 {
-  "name": "יתרונות",
+  "name": "Features",
   "blocks": [
     {
       "type": "feature",
-      "name": "יתרון",
+      "name": "Feature",
       "settings": [
-        { "type": "select", "id": "icon", "label": "אייקון", "default": "hand", "options": [
-          { "value": "hand", "label": "יד" }, { "value": "kiln", "label": "להבה" }, { "value": "truck", "label": "משלוח" }
+        { "type": "select", "id": "icon", "label": "Icon", "default": "hand", "options": [
+          { "value": "hand", "label": "Hand" }, { "value": "kiln", "label": "Flame" }, { "value": "truck", "label": "Delivery" }
         ] },
-        { "type": "text", "id": "title", "label": "כותרת", "default": "עבודת יד" },
-        { "type": "text", "id": "text", "label": "טקסט", "default": "כל כלי נוצר בנפרד על האובניים" }
+        { "type": "text", "id": "title", "label": "Title", "default": "Handmade" },
+        { "type": "text", "id": "text", "label": "Text", "default": "Every piece is made individually on the wheel" }
       ]
     }
   ],
   "max_blocks": 4,
   "presets": [
     {
-      "name": "יתרונות",
+      "name": "Features",
       "blocks": [
-        { "type": "feature", "settings": { "icon": "hand", "title": "עבודת יד", "text": "כל כלי נוצר בנפרד, ואין שניים זהים" } },
-        { "type": "feature", "settings": { "icon": "kiln", "title": "בטוח לשימוש", "text": "זיגוגים בטוחים למזון, למדיח ולמיקרוגל" } },
-        { "type": "feature", "settings": { "icon": "truck", "title": "אריזה בטוחה", "text": "משלוח לכל הארץ באריזה מרופדת" } }
+        { "type": "feature", "settings": { "icon": "hand", "title": "Handmade", "text": "Every piece is made individually – no two are alike" } },
+        { "type": "feature", "settings": { "icon": "kiln", "title": "Safe to use", "text": "Food-safe glazes, dishwasher and microwave safe" } },
+        { "type": "feature", "settings": { "icon": "truck", "title": "Packed with care", "text": "Nationwide delivery in padded packaging" } }
       ]
     }
   ]
