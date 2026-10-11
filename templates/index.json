@@ -1,46 +1,132 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "hero",
       "settings": {
         "layout": "split",
+        "overlay": 30,
+        "height": "large",
         "eyebrow": "Levana's Magic",
-        "heading": "Handmade pieces for everyday use",
+        "heading": "Magical ceramic lamps for children's rooms",
         "text": "<p>Handmade ceramic lamps, cake stands and wall art for kids' rooms and the living room.</p>",
-        "button_label": "Shop all pieces"
+        "button_label": "Shop all pieces",
+        "button_link": ""
       }
     },
     "features": {
       "type": "features",
       "blocks": {
-        "f1": { "type": "feature", "settings": { "icon": "hand", "title": "Handmade", "text": "Every piece is shaped and painted by hand – no two are alike" } },
-        "f2": { "type": "feature", "settings": { "icon": "kiln", "title": "Kiln-fired ceramic", "text": "Durable, glazed ceramic made to last for years" } },
-        "f3": { "type": "feature", "settings": { "icon": "truck", "title": "Packed with care", "text": "Nationwide delivery in padded packaging" } }
+        "f1": {
+          "type": "feature",
+          "settings": {
+            "icon": "hand",
+            "title": "Handmade",
+            "text": "Every piece is shaped and painted by hand – no two are alike"
+          }
+        },
+        "f2": {
+          "type": "feature",
+          "settings": {
+            "icon": "kiln",
+            "title": "Kiln-fired ceramic",
+            "text": "Durable, glazed ceramic made to last for years"
+          }
+        },
+        "f3": {
+          "type": "feature",
+          "settings": {
+            "icon": "truck",
+            "title": "Packed with care",
+            "text": "Nationwide delivery in padded packaging"
+          }
+        }
       },
-      "block_order": ["f1", "f2", "f3"]
+      "block_order": [
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "settings": {}
     },
     "featured": {
       "type": "featured-collection",
-      "settings": { "heading": "Fresh from the kiln", "limit": 8, "columns": "4" }
+      "settings": {
+        "heading": "Fresh from the kiln",
+        "collection": "",
+        "limit": 8,
+        "columns": "4"
+      }
     },
     "categories": {
       "type": "collection-list",
-      "settings": { "heading": "Shop by category" },
       "blocks": {
-        "c1": { "type": "collection", "settings": { "fallback_title": "Lamps" } },
-        "c2": { "type": "collection", "settings": { "fallback_title": "Cake Stands" } },
-        "c3": { "type": "collection", "settings": { "fallback_title": "Wall Art" } }
+        "c1": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "fallback_title": "Lamps"
+          }
+        },
+        "c2": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "fallback_title": "Cake Stands"
+          }
+        },
+        "c3": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "fallback_title": "Wall Art"
+          }
+        }
       },
-      "block_order": ["c1", "c2", "c3"]
+      "block_order": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "settings": {
+        "heading": "Shop by category"
+      }
     },
     "about": {
       "type": "image-with-text",
-      "settings": { "layout": "image-first" }
+      "settings": {
+        "layout": "image-first",
+        "eyebrow": "About the studio",
+        "heading": "Hi, I'm Levana",
+        "text": "<p>I've been working with clay for years in a small studio near my home. Every lamp, cake stand and wall piece starts as a lump of clay, then is shaped, dried, fired, painted and glazed by hand.</p><p>I love creating pieces that bring warmth and a bit of magic into children's rooms and family spaces.</p>",
+        "button_label": "Read the full story",
+        "button_link": ""
+      }
     },
     "custom": {
       "type": "rich-text",
-      "settings": {}
+      "settings": {
+        "heading": "Custom orders",
+        "text": "<p>Looking for a tableware set for your home, a restaurant, or a special gift? I'd be happy to create custom pieces for you.</p>",
+        "button_label": "Get in touch",
+        "button_link": ""
+      }
     }
   },
-  "order": ["hero", "features", "featured", "categories", "about", "custom"]
+  "order": [
+    "hero",
+    "features",
+    "featured",
+    "categories",
+    "about",
+    "custom"
+  ]
 }
