@@ -14,15 +14,20 @@
     "announcement": {
       "type": "announcement-bar",
       "settings": {
-        "text": "Every piece is handmade and one of a kind – free shipping on orders over ₪350"
+        "text": "Every piece is handmade and one of a kind – free shipping on orders over ₪800",
+        "link": ""
       }
     },
     "header": {
       "type": "header",
       "settings": {
+        "logo_width": 140,
         "menu": "main-menu"
       }
     }
   },
-  "order": ["announcement", "header"]
+  "order": [
+    "announcement",
+    "header"
+  ]
 }
