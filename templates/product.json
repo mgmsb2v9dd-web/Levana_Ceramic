@@ -7,14 +7,14 @@
           "type": "collapsible",
           "settings": {
             "heading": "Care instructions",
-            "content": "<p>Dishwasher and microwave safe unless stated otherwise. Avoid sudden changes between hot and cold. Handmade ceramics may vary slightly in colour and shape – that's part of the magic.</p>"
+            "content": "<p>Wipe with a soft, damp cloth. Cake stands: hand wash with mild soap. Handmade ceramics may vary slightly in colour and shape – that's part of the magic.</p>"
           }
         },
         "shipping": {
           "type": "collapsible",
           "settings": {
             "heading": "Shipping & packaging",
-            "content": "<p>Every piece is packed individually in padded packaging. If something arrives broken, send me a photo and I'll make it right.</p>"
+            "content": "<p>Every piece is packed individually in padded packaging. Estimated delivery time is shown above. If something arrives broken, send me a photo and I'll make it right.</p>"
           }
         }
       },
